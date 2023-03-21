@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class JoueurController extends Controller
 {
+    //Auth function
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+    
+
     public function index()
     {
         $joueurs = DB::table('joueurs')

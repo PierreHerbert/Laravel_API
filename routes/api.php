@@ -6,6 +6,8 @@ use App\Http\Controllers\API\JoueurController;
 use App\Http\Controllers\API\EquipeController;
 use App\Http\Controllers\API\ClubController;
 use App\Http\Controllers\API\MaterielController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,4 +59,13 @@ Route::controller(MaterielController::class)->group(function () {
     Route::post('materiel/{materiel}', 'update');
     Route::delete('materiel/{materiel}', 'destroy');
 }); 
+
+
+Route::controller(AuthController::class)->group(function () {
+    Route::post('login', 'login');
+    Route::post('register', 'register');
+    Route::post('logout', 'logout');
+    Route::post('refresh', 'refresh');
+
+});
 
