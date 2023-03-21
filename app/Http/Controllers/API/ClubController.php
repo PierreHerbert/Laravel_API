@@ -100,7 +100,7 @@ class ClubController extends Controller
             $filename = Null;
         }
 
-        // On crée un nouvel utilisateur
+        // On met à jour l'utilisateur
         $club->update([
             'nomClub' => $request->nomClub,
             'logoClub' => $filename,
